@@ -22,6 +22,9 @@ app.get('/article-three',function(req,res){
     res.send('Article three will be requested and served here.');
 });
 
+app.get('/aboutMe', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'aboutMe.html'));
+});
 
 
 

@@ -2,7 +2,7 @@ console.log('Loaded!');
 //Counter code
 
 var button = document.getElementById('counter');
-var counter = 0;
+
 
 button.onclick = function() {
 
@@ -37,8 +37,7 @@ button.onclick = function() {
       
   };
   
-
-   //Select the correct span area(i.e by id) from the html document
+};
    
    
-}
+   

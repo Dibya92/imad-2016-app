@@ -53,7 +53,7 @@ app.get('/submit-name',function(req,res) {
    
 //Get the name from the request:
    
-  var name = req.query.name;
+  var name = req.query;
    
 //push the name to a list:
    

@@ -46,6 +46,21 @@ app.get('/ui/offPic.jpg', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'offPic.jpg'));
 });
 
+var names = [];
+app.get('/submit-name:name', functon (req,res) {
+    
+    //Get the name from the request
+      var name = req.params.name;
+       names.push(name);//push the name to a list
+    
+    //Using JSON to send object as string
+      res.send(JSON.stringyfy(names));//Send to the client
+    
+    
+});
+
+
+
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
 app.listen(8080, function () {
   console.log(`IMAD course app listening on port ${port}!`);

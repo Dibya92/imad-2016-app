@@ -61,7 +61,7 @@ app.get('/submit-name/:name',function(req,res) {
   
  //Using JSON to send JS object as string back to the client
    
-  res.send(JSON.stringyfy(names));
+  res.send(JSON.stringify(names));
   
  
   

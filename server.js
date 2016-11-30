@@ -46,20 +46,20 @@ app.get('/ui/offPic.jpg', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'offPic.jpg'));
 });
 
+
 var names = [];
 
-
-app.get('/submit-name:name',function(req,res){
+app.get('/submit-name/:name',function(req,res) {
    
-//Get the name from the request
+//Get the name from the request:
    
   var name = req.params.name;
    
-//push the name to a list
+//push the name to a list:
    
   names.push(name);
   
- //Using JSON to send object as string  to the client
+ //Using JSON to send JS object as string back to the client
    
   res.send(JSON.stringyfy(names));
   

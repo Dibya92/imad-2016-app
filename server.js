@@ -47,17 +47,7 @@ app.get('/ui/offPic.jpg', function (req, res) {
 });
 
 var names = [];
-app.get('/submit-name:name', functon (req,res) {
-    
-    //Get the name from the request
-      var name = req.params.name;
-       names.push(name);//push the name to a list
-    
-    //Using JSON to send object as string
-      res.send(JSON.stringyfy(names));//Send to the client
-    
-    
-});
+
 
 
 

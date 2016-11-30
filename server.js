@@ -49,6 +49,24 @@ app.get('/ui/offPic.jpg', function (req, res) {
 var names = [];
 
 
+app.get('/submit-name:name',function(req,res){
+   
+//Get the name from the request
+   
+  var name = req.params.name;
+   
+//push the name to a list
+   
+  names.push(name);
+  
+ //Using JSON to send object as string  to the client
+   
+  res.send(JSON.stringyfy(names));
+  
+ 
+  
+});
+
 
 
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80

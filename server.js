@@ -49,11 +49,11 @@ app.get('/ui/offPic.jpg', function (req, res) {
 
 var names = [];
 
-app.get('/submit-name/:name',function(req,res) {
+app.get('/submit-name',function(req,res) {
    
 //Get the name from the request:
    
-  var name = req.params.name;
+  var name = req.query.name;
    
 //push the name to a list:
    

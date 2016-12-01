@@ -1,10 +1,9 @@
 //code for counting like in the home page
-// 1.Counter code
 
-var button = document.getElementById('bttnOne');
+// code for first like button:
+var button1 = document.getElementById('bttnOne');
 
-
-button.onclick = function() {
+button1.onclick = function() {
 
   // create a request object named "request"
   
@@ -32,9 +31,48 @@ button.onclick = function() {
   
   };           
  
- // Make the request:
+ // Making the request:
   
   request.open('GET','http://dibya92.imad.hasura-app.io/counter1',true);
+  request.send(null);
+      
+ 
+};
+
+// code for second like button:
+var button2 = document.getElementById('bttnTwo');
+
+button2.onclick = function() {
+
+  // create a request object named "request"
+  
+  var request = new XMLHttpRequest();
+  
+  //Capture the response and store it in a variable
+  
+  request.onreadystatechange = function(){
+        // process the server response
+          
+        if (request.readyState === XMLHttpRequest.DONE) {
+               // everything is good, the response is received
+               
+               if (request.status === 200) {
+                    // Perfect! Now we want to capture the value from the respone
+                    var counter = request.responseText;
+                    var span = document.getElementById('count2');
+                    span.innerHTML = counter.toString();
+
+                                
+                } 
+             
+             
+        } 
+  
+  };           
+ 
+ // Making the request:
+  
+  request.open('GET','http://dibya92.imad.hasura-app.io/counter2',true);
   request.send(null);
       
  

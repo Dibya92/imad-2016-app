@@ -53,8 +53,13 @@ app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
 
+//Serving the js files
+
 app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
+});
+app.get('/ui/like.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'like.js'));
 });
 
 app.get('/ui/madi.png', function (req, res) {

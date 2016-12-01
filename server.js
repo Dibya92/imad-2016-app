@@ -10,11 +10,14 @@ app.use(morgan('combined'));
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
-var counter = 0;
-app.get('/counter',function(req,res){
-   counter = counter + 1;
-   res.send(counter.toString());
+
+//Counter end points for tracking the like buttons on index-page
+var counter1 = 0;
+app.get('/counter1',function(req,res){
+   counter1 = counter1 + 1;
+   res.send(counter1.toString());
 });
+
 
 app.get('/profile',function(req,res){
    res.sendFile(path.join(__dirname, 'ui', 'profile.html'));

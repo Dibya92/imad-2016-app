@@ -1,7 +1,7 @@
 //code for counting like in the home page
 // 1.Counter code
 
-var button = document.getElementById('counter');
+var button = document.getElementById('bttnOne');
 
 
 button.onclick = function() {
@@ -21,7 +21,7 @@ button.onclick = function() {
                if (request.status === 200) {
                     // Perfect! Now we want to capture the value from the respone
                     var counter = request.responseText;
-                    var span = document.getElementById('count');
+                    var span = document.getElementById('count1');
                     span.innerHTML = counter.toString();
 
                                 

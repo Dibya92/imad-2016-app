@@ -34,7 +34,7 @@ button.onclick = function() {
  
  // Make the request:
   
-  request.open('GET','http://dibya92.imad.hasura-app.io/counter',true);
+  request.open('GET','http://dibya92.imad.hasura-app.io/counter1',true);
   request.send(null);
       
  

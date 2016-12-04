@@ -4,22 +4,10 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-
-
-
-
-
-
-
-
 //Serving the home-page
  app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
-
-
-    
-
 
 
 //Counter end points for tracking the like buttons on index-page

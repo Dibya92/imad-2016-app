@@ -8,16 +8,16 @@ app.use(morgan('combined'));
   var Pool = require('pg').Pool;
 
 //Database configuration
-  var config = {
+  /*var config = {
        host: 'http:db.imad.hasura-app.io',
        user: 'dibya92',
        password: 'db-dibya92-95300',
        database: 'dibya92',
        port:'5432'
       
-  };
+  };*/
 
-var pool = new Pool(config);
+//var pool = new Pool(config);
 
 //Data-base end point:
 

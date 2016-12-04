@@ -1,15 +1,54 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
-
 var app = express();
 app.use(morgan('combined'));
 
+//Creating coonection pool to use the database:
+  var Pool = require('pg').Pool;
+
+//Database configuration
+  var config = {
+       host: 'http://db.imad.hasura-app.io',
+       user: 'dibya92',
+       password: process.env.DB_PASSWORD,
+       database: 'dibya92',
+       port:'5432'
+      
+  };
+
+var pool = new Pool(config);
+
+//Data-base end point:
+
+app.get('/test-db',function(req,res){
+
+      pool.query('SELECT * FROM test',function(err,result){
+          
+          if(err){
+                  res.status(500).send(err.toString());
+            }
+          else{
+               res.send(JSON.stringify(result));
+          }
+    
+     
+          
+      });   
+});    
 
 
-app.get('/', function (req, res) {
+
+
+//Serving the home-page
+ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
+
+
+    
+
+
 
 //Counter end points for tracking the like buttons on index-page
 

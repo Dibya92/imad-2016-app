@@ -30,8 +30,26 @@ app.get('/counter3',function(req,res){
    res.send(counter3.toString());
 });
 
+//Comment list end point
+var comments = [];
 
-
+app.get('/commentList',function(req,res) {
+   
+//Get the name from the request:
+   
+  var comment = req.query.name;//name send as query parameter
+   
+//push the name to a list:
+   
+  comments.push(comment);
+  
+ //Using JSON to send JS object as string back to the client
+   
+  res.send(JSON.stringify(comments));
+  
+ 
+  
+});
 
 
 app.get('/profile',function(req,res){

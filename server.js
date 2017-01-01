@@ -60,7 +60,7 @@ app.get('/ui/main.js', function (req, res) {
 app.get('/ui/like.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'like.js'));
 });
-app.get('/ui/like.js', function (req, res) {
+app.get('/ui/comment.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'comment.js'));
 });
 

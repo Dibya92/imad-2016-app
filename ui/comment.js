@@ -13,7 +13,7 @@ submit.onclick = function() {
        //Templating Job
        var comments = ["comment1","comment2","comment3"];
        var list = "";  //Empty String
-       for (var i=0; i<comments.length; i++) {
+       for (var i=0; i<=comments.length; i++) {
            list += "<li>" + comments[i] + "</li>" + "<br />";
          }
        var commentList = document.getElementById("commentList");

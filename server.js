@@ -37,7 +37,7 @@ app.get('/commentList',function(req,res) {
    
 //Get the name from the request:
    
-  var comment = req.query.name;//name send as query parameter
+  var comment = req.query.comment;//comments send as query parameter are captured into variable 'comment'
    
 //push the name to a list:
    

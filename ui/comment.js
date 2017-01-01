@@ -1,6 +1,6 @@
 //Select and capure the name from the document
 
-var comment = document.getElementById("comment").value;
+
 
 var submit = document.getElementById("commentButton");
 
@@ -30,7 +30,8 @@ submit.onclick = function() {
            }
   
       };
-    
+     //Get the current value in the comment box
+      var comment = document.getElementById("comment").value;
      //Make the request
       httpRequest.open('GET', 'http://dibya92.imad.hasura-app.io/commentList?comment='+comment);
       httpRequest.send(null);

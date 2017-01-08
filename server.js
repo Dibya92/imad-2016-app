@@ -4,7 +4,14 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-
+  var Pool = require('pg').Pool;
+  var config = {
+  host: 'http://db.imad.hasura-app.io',
+  user: 'dibya92',
+  password: 'db-dibya92-95300',       //Environment variable
+  database: 'dibya92',
+  port: '5432',
+  };
 
 
 //Counter end points for tracking the like buttons on index-page
@@ -56,14 +63,7 @@ app.get('/commentList',function(req,res) {
 
 //Data-base End-point:
   //Creating connection pool
-  var Pool = require('pg').Pool;
-  var config = {
-  host: 'http://db.imad.hasura-app.io',
-  user: 'dibya92',
-  password: 'db-dibya92-95300',       //Environment variable
-  database: 'dibya92',
-  port: '5432',
-  };
+ 
   // create the pool somewhere globally so its lifetime
   // lasts for as long as your app is running
   var pool = new Pool(config);

@@ -4,10 +4,7 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-//Serving the home-page
- app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
-});
+
 
 
 //Counter end points for tracking the like buttons on index-page
@@ -50,7 +47,12 @@ app.get('/commentList',function(req,res) {
  
   
 });
+//Serving the home-page:
+  app.get('/', function (req, res) {
+    res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+  });
 
+//Serving other resouces:
 
 app.get('/profile',function(req,res){
    res.sendFile(path.join(__dirname, 'ui', 'profile.html'));
@@ -91,6 +93,7 @@ app.get('/ui/offPic.jpg', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'offPic.jpg'));
 });
 
+//serving the name list in profile page
 
 var names = [];
 

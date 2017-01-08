@@ -68,7 +68,7 @@ app.get('/commentList',function(req,res) {
   // lasts for as long as your app is running
   var pool = new Pool(config);
 
- app.get('/test-db',function(req,res){
+  app.get('/test-db',function(req,res){
     //make a select request
     //return a respose with the result
     pool.query('SELECT * FROM test',function(err,result){

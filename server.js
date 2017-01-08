@@ -54,6 +54,35 @@ app.get('/commentList',function(req,res) {
 
 //Serving other resouces:
 
+//Data-base End-point:
+  //Creating connection pool
+  var Pool = require('pg').Pool;
+  var config = {
+  host: 'http://db.imad.hasura-app.io',
+  user: 'dibya92',
+  password: process.env.DB_PASSWORD,       //Environment variable
+  database: 'dibya92',
+  port: '5432'
+  };
+  // create the pool somewhere globally so its lifetime
+  // lasts for as long as your app is running
+  var pool = new Pool(config);
+
+ app.get('/test-db',function(req,res){
+    //make a select request
+    //return a respose with the result
+    pool.query('SELECT * FROM test',function(err,result){
+        if (err) {
+            res.status(500).send(err.toString());
+            
+        }
+        else {
+            res.send(JSON.stringify(result));
+        }
+    });
+ });
+
+
 app.get('/profile',function(req,res){
    res.sendFile(path.join(__dirname, 'ui', 'profile.html'));
 });

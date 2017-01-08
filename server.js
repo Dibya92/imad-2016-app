@@ -10,7 +10,7 @@ app.use(morgan('combined'));
   user: 'dibya92',
   password: 'db-dibya92-95300',       //Environment variable
   database: 'dibya92',
-  port: '5432',
+  port: 'localhost:5432',
   };
 
 

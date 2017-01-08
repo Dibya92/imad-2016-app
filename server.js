@@ -62,7 +62,7 @@ app.get('/commentList',function(req,res) {
   user: 'dibya92',
   password: process.env.DB_PASSWORD,       //Environment variable
   database: 'dibya92',
-  port: '5432'
+  port: '5432',
   };
   // create the pool somewhere globally so its lifetime
   // lasts for as long as your app is running

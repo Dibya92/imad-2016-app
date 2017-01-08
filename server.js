@@ -60,7 +60,7 @@ app.get('/commentList',function(req,res) {
   var config = {
   host: 'http://db.imad.hasura-app.io',
   user: 'dibya92',
-  password: process.env.DB_PASSWORD,       //Environment variable
+  password: 'db-dibya92-95300',       //Environment variable
   database: 'dibya92',
   port: '5432',
   };
